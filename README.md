@@ -1,8 +1,9 @@
-# Prime Number V2
-This is version 2 of prime numbers.
+# Prime Number Gap V2
+This is version 2 of Prime Number Gap.
 
-The genesis block starts a 0 to 2^32. 
-
-The arrays consists of bits and its size is 2^32.
-
-Once a block is copleted. it is then compressed with a base 174.
+The main premise of this program is to start a block with a
+array of 2^32 bits. Its called the Genesis block. After the
+Gensis block is completed. It gets loaded and the primes
+are ran against all of the following blocks. It will continue 
+to process the completed blocks till the second to last one
+runs on the last block. 

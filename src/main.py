@@ -16,9 +16,24 @@ without restriction, subject to the conditions specified in the license.
 # Third-Party Imports
 
 # Local Imports
+from Classes.base_converter import BaseConvert
+from Classes.pbm import PrimeBlockManager
+from Classes.dpm import ProgressManager
+from Classes.sieve import SieveProcessor
+
+# Constants
+JSON_DIR = "Database/json_blocks"  # Directory to store JSON files
+
 
 def main() -> None:
     # This is the primary function to start your program.
+    # Setting up the classes so they can be passed around instead of being loaded
+    # each time in every class and cause a circle error.
+    convert = BaseConvert()
+    pbm = PrimeBlockManager()
+    dpm = ProgressManager(JSON_DIR +"/progress.json")
+    sieve = SieveProcessor(bc=convert, pbm=pbm, dpm=dpm)
+
 
     return
 
